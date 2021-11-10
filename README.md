@@ -62,8 +62,7 @@ All the input above are scanned one by one.
 ### Clone the repo
 To run the code, make sure you clone with
 ``` bash
-git clone git@github.com:TAMUCrypto/zkCNN.git
-git submodule update --init --recursive
+git clone --recurse-submodules git@github.com:TAMUCrypto/zkCNN.git
 ```
 since the polynomial commitment is included as a submodule.
 
