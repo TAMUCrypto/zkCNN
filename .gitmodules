@@ -1,0 +1,3 @@
+[submodule "3rd/hyrax-bls12-381"]
+	path = 3rd/hyrax-bls12-381
+	url = git@github.com:TAMUCrypto/hyrax-bls12-381.git
