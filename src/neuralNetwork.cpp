@@ -43,10 +43,11 @@ neuralNetwork::neuralNetwork(i64 psize, i64 pchannel, i64 pparallel, i64 kernel_
     pool_stride_bl = pool_bl >> 1;
     conv_section.resize(sec_size);
 
+    convType conv_ty = kernel_size > 3 || pparallel > 1 ? FFT : NAIVE_FAST;
     i64 start = start_channel;
     for (i64 i = 0; i < sec_size; ++i) {
-        conv_section[i].emplace_back(start << i, i ? (start << (i - 1)) : pic_channel, kernel_size);
-        conv_section[i].emplace_back(start << i, start << i, kernel_size);
+        conv_section[i].emplace_back(conv_ty, start << i, i ? (start << (i - 1)) : pic_channel, kernel_size);
+        conv_section[i].emplace_back(conv_ty, start << i, start << i, kernel_size);
         pool.emplace_back(pool_ty, 2, 1);
     }
 
