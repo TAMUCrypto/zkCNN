@@ -17,28 +17,31 @@ public:
 class vgg16: public neuralNetwork {
 
 public:
-    explicit vgg16(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, convType conv_ty, poolType pool_ty,
-                   const std::string &i_filename, const string &c_filename, const std::string &o_filename);
+    explicit vgg16(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, poolType pool_ty,
+                   const std::string &i_filename,
+                   const string &c_filename, const std::string &o_filename);
 
 };
 
 class vgg11: public neuralNetwork {
 
 public:
-    explicit vgg11(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, convType conv_ty, poolType pool_ty,
-                   const std::string &i_filename, const string &c_filename, const std::string &o_filename);
+    explicit vgg11(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, poolType pool_ty,
+                   const std::string &i_filename,
+                   const string &c_filename, const std::string &o_filename);
 
 };
 
 class lenet: public neuralNetwork {
 public:
-    explicit lenet(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, convType conv_ty, poolType pool_ty,
-                   const std::string &i_filename, const string &c_filename, const std::string &o_filename);
+    explicit lenet(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, poolType pool_ty,
+                   const std::string &i_filename,
+                   const string &c_filename, const std::string &o_filename);
 };
 
 class lenetCifar: public neuralNetwork {
 public:
-    explicit lenetCifar(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, convType conv_ty, poolType pool_ty,
+    explicit lenetCifar(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparallel, poolType pool_ty,
                         const std::string &i_filename, const string &c_filename, const std::string &o_filename);
 };
 

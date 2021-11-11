@@ -66,10 +66,21 @@ git clone --recurse-submodules git@github.com:TAMUCrypto/zkCNN.git
 ```
 since the polynomial commitment is included as a submodule.
 
+### Run a demo of LeNet5
+The script to run LeNet5 model (please run the script in ``script/`` directory).
+``` bash
+./demo_lenet.sh
+```
+
+- The input data is in ``data/lenet5.mnist.relu.max/``.
+- The experiment evaluation is ``output/single/demo-result-lenet5.txt``.
+- The inference result is ``output/single/lenet5.mnist.relu.max-1-infer.csv``.
+
+
 ### Run a demo of vgg11
 The script to run vgg11 model (please run the script in ``script/`` directory).
 ``` bash
-./demo.sh
+./demo_vgg.sh
 ```
 
 - The input data is in ``data/vgg11/``.

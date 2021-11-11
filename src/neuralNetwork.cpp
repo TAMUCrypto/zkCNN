@@ -37,7 +37,7 @@ neuralNetwork::neuralNetwork(i64 psize_x, i64 psize_y, i64 pchannel, i64 pparall
 }
 
 neuralNetwork::neuralNetwork(i64 psize, i64 pchannel, i64 pparallel, i64 kernel_size, i64 sec_size, i64 fc_size,
-                             i64 start_channel, convType conv_ty, poolType pool_ty)
+                             i64 start_channel, poolType pool_ty)
         : neuralNetwork(psize, psize, pchannel, pparallel, "", "", "") {
     pool_bl = 2;
     pool_stride_bl = pool_bl >> 1;
@@ -45,8 +45,8 @@ neuralNetwork::neuralNetwork(i64 psize, i64 pchannel, i64 pparallel, i64 kernel_
 
     i64 start = start_channel;
     for (i64 i = 0; i < sec_size; ++i) {
-        conv_section[i].emplace_back(conv_ty, start << i, i ? (start << (i - 1)) : pic_channel, kernel_size);
-        conv_section[i].emplace_back(conv_ty, start << i, start << i, kernel_size);
+        conv_section[i].emplace_back(start << i, i ? (start << (i - 1)) : pic_channel, kernel_size);
+        conv_section[i].emplace_back(start << i, start << i, kernel_size);
         pool.emplace_back(pool_ty, 2, 1);
     }
 

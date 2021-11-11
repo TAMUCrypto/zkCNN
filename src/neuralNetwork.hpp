@@ -21,11 +21,15 @@ enum convType {
 struct convKernel {
     convType ty;
     i64 channel_out, channel_in, size, stride_bl, padding, weight_start_id, bias_start_id;
-    convKernel(convType _ty, i64 _channel_out, i64 _channel_in, i64 _size, i64 _log_stride, i64 _padding) :
-            ty(_ty), channel_out(_channel_out), channel_in(_channel_in), size(_size), stride_bl(_log_stride), padding(_padding){}
+    convKernel(i64 _channel_out, i64 _channel_in, i64 _size, i64 _log_stride, i64 _padding) :
+            channel_out(_channel_out), channel_in(_channel_in), size(_size), stride_bl(_log_stride), padding(_padding) {
+        ty = size > 3 ? FFT : NAIVE_FAST;
+    }
 
-    convKernel(convType _ty, i64 _channel_out, i64 _channel_in, i64 _size):
-            convKernel(_ty, _channel_out, _channel_in, _size, 0, _size >> 1) {}
+    convKernel(i64 _channel_out, i64 _channel_in, i64 _size) :
+            convKernel(_channel_out, _channel_in, _size, 0, _size >> 1) {
+        ty = size > 3 ? FFT : NAIVE_FAST;
+    }
 };
 
 struct fconKernel {
@@ -56,7 +60,7 @@ public:
                            const string &c_filename, const string &o_filename);
 
     neuralNetwork(i64 psize, i64 pchannel, i64 pparallel, i64 kernel_size, i64 sec_size, i64 fc_size,
-                  i64 start_channel, convType conv_ty, poolType pool_ty);
+                  i64 start_channel, poolType pool_ty);
 
     void create(prover &pr, bool only_compute);
 

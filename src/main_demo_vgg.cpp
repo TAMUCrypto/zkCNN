@@ -15,8 +15,6 @@
 #define NETWORK_FILE_ID 4   // the configuration of vgg
 #define PIC_CNT 5           // the number of picture paralleled
 
-char QSIZE;
-char SCALE;
 vector<std::string> output_tb(16, "");
 
 int main(int argc, char **argv) {

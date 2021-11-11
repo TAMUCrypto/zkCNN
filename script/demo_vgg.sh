@@ -3,10 +3,10 @@
 set -x
 
 ./build.sh
-/usr/bin/cmake --build ../cmake-build-release --target demo_run -- -j 6
+/usr/bin/cmake --build ../cmake-build-release --target demo_vgg_run -- -j 6
 
-run_file=../cmake-build-release/src/demo_run
-out_file=../output/single/demo-result.txt
+run_file=../cmake-build-release/src/demo_vgg_run
+out_file=../output/single/demo-result-vgg11.txt
 
 mkdir -p ../output/single
 mkdir -p ../log/single
