@@ -71,5 +71,14 @@ The script to run vgg11 model (please run the script in ``script/`` directory).
 
 ## Polynomial Commitment
 
-Here we implement a hyrax polynomial commitment based on BLS12-381 elliptic curve. It is a submodule and someone who is interested can refer to this repo [hyrax-bls12-381](https://github.com/TAMUCrypto/hyrax-bls12-381).
+Here we implement a [hyrax polynomial commitment](https://eprint.iacr.org/2017/1132.pdf) based on BLS12-381 elliptic curve. It is a submodule and someone who is interested can refer to this repo [hyrax-bls12-381](https://github.com/TAMUCrypto/hyrax-bls12-381).
 
+## Reference
+- [zkCNN: Zero knowledge proofs for convolutional neural network predictions and accuracy](https://doi.org/10.1145/3460120.3485379).
+  Liu, T., Xie, X., & Zhang, Y. (CCS 2021).
+
+- [Doubly-efficient zksnarks without trusted setup](https://doi.org/10.1109/SP.2018.00060). Wahby, R. S., Tzialla, I., Shelat, A., Thaler, J., & Walfish, M. (S&P 2018)
+
+- [Hyrax](https://github.com/hyraxZK/hyraxZK.git)
+
+- [mcl](https://github.com/herumi/mcl)
