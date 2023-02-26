@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the implementation of [this paper](https://eprint.iacr.org/2021/673), which is a GKR-based zero-knowledge proof for CNN reference, containing some common CNN models such as LeNet5, vgg11 and vgg16.
+This is the implementation of [this paper](https://eprint.iacr.org/2021/673), which is a GKR-based snark for CNN reference, containing some common CNN models such as LeNet5, vgg11 and vgg16. **Currently this version doesn't add complete zero-knowledge property.**
 
 
 
