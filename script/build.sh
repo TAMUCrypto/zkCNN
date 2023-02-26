@@ -2,7 +2,8 @@
 cd ..
 mkdir -p cmake-build-release
 cd cmake-build-release
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" ..
+cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" ..
+make
 cd ..
 
 if [ ! -d "./data" ]
